@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>index</title>
+	<script src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="jquery.marquee.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#marquee-first span').marquee({
+				event: "mouseenter",
+				padding: 20,
+				speed: 10000,
+				direction: "left",
+				moveElement: "#move-marquee"
+			});
+
+			$('#marquee-second span').marquee({
+				event: "click",
+				direction: "right",
+				moveElement: "#move-element"
+			});
+
+			$('#marquee-third span').marquee();
+		});
+	</script>
+	<style type="text/css">
+		.marquee {
+			width: 300px;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    box-sizing: border-box;
+		}
+		.marquee > div {
+			position: relative;
+			text-align: center;
+		}
+
+		.marquee span {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="marquee-first" class="marquee">
+		<div id="move-marquee">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+		</div>
+	</div>
+
+
+	<div id="marquee-second" class="marquee">
+		<div id="move-element">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+		</div>
+	</div>
+
+	<div id="marquee-third" class="marquee">
+		<div id="move-marquee">
+			<span>Lorem ipsum.</span>
+		</div>
+	</div>
+</body>
+</html>
